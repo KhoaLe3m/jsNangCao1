@@ -1,5 +1,5 @@
 const Nav = {
-    print() {
+    render() {
         return /* html */ `
             <ul class="flex  ">
                 <li><a href="/" class="block  py-3 px-4 text-white hover:bg-blue-500">Home Page</a></li>

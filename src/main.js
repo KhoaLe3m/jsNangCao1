@@ -3,20 +3,24 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import AboutPage from "./pages/About";
 import HomePage from "./pages/Home";
+import NewsDetail from "./pages/newDetail";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const render = (content) => {
-    document.getElementById("header").innerHTML = Header.print();
-    document.getElementById("app").innerHTML = content.print();
-    document.getElementById("footer").innerHTML = Footer.print();
+const printlayout = (content) => {
+    document.getElementById("header").innerHTML = Header.render();
+    document.getElementById("app").innerHTML = content;
+    document.getElementById("footer").innerHTML = Footer.render();
 };
 
 router.on({
     "/": () => {
-        render(HomePage);
+        printlayout(HomePage.render());
     },
     "/about": () => {
-        render(AboutPage);
+        printlayout(AboutPage.render());
+    },
+    "/news/:id": () => {
+        printlayout(NewsDetail.render());
     },
 });
 router.resolve();
