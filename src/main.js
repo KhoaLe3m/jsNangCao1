@@ -19,8 +19,9 @@ router.on({
     "/about": () => {
         printlayout(AboutPage.render());
     },
-    "/news/:id": () => {
-        printlayout(NewsDetail.render());
+    "/news/:id": ({ data }) => {
+        const { id } = data;
+        printlayout(NewsDetail.render(id));
     },
 });
 router.resolve();
