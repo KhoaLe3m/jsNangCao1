@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import AboutPage from "./pages/About";
 import addNews from "./pages/addnews";
+import EditNews from "./pages/editnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
 import News from "./pages/news";
@@ -38,6 +39,10 @@ router.on({
     },
     "admin/news/add": () => {
         printlayout(addNews.render());
+    },
+    "admin/news/:id/edit": ({ data }) => {
+        const { id } = data;
+        printlayout(EditNews.render(id));
     },
 });
 router.resolve();
