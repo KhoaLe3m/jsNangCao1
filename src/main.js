@@ -2,9 +2,10 @@ import Navigo from "navigo";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import AboutPage from "./pages/About";
-import DashBoard from "./pages/dashboard";
+import addNews from "./pages/addnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
+import News from "./pages/news";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 
@@ -32,8 +33,11 @@ router.on({
     "/signup": () => {
         printlayout(SignUp.render());
     },
-    "admin/dashboard": () => {
-        printlayout(DashBoard.render());
+    "admin/news": () => {
+        printlayout(News.render());
+    },
+    "admin/news/add": () => {
+        printlayout(addNews.render());
     },
 });
 router.resolve();

@@ -1,6 +1,6 @@
 const SignUp = {
     render() {
-        return `
+        return /* html */`
             <div class="max-w-5xl mx-auto border">
                     <div class="flex items-center min-h-screen bg-gray-50">
                     <div class="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
