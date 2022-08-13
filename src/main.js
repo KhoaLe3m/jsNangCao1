@@ -2,6 +2,7 @@ import Navigo from "navigo";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import AboutPage from "./pages/About";
+import DashBoard from "./pages/dashboard";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
 import SignIn from "./pages/signin";
@@ -30,6 +31,9 @@ router.on({
     },
     "/signup": () => {
         printlayout(SignUp.render());
+    },
+    "admin/dashboard": () => {
+        printlayout(DashBoard.render());
     },
 });
 router.resolve();
