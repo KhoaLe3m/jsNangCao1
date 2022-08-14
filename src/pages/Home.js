@@ -1,7 +1,8 @@
+import axios from "axios";
+
 const HomePage = {
     async render() {
-        const response = await fetch("https://62f88f983eab3503d1d7f03c.mockapi.io/post");
-        const data = await response.json();
+        const { data } = await axios.get("https://62f88f983eab3503d1d7f03c.mockapi.io/post");
         return /* html */`
             <div class="max-w-5xl mx-auto">
                 <div class="banner">
