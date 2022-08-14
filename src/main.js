@@ -11,15 +11,15 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const printlayout = (content) => {
+const printlayout = async (content) => {
     document.getElementById("header").innerHTML = Header.render();
-    document.getElementById("app").innerHTML = content;
+    document.getElementById("app").innerHTML = await content.render();
     document.getElementById("footer").innerHTML = Footer.render();
 };
 
 router.on({
     "/": () => {
-        printlayout(HomePage.render());
+        printlayout(HomePage);
     },
     "/about": () => {
         printlayout(AboutPage.render());
@@ -46,3 +46,51 @@ router.on({
     },
 });
 router.resolve();
+
+// const loadScript = function (src, callback) {
+//     const script = document.createElement("script");
+//     script.src = src;
+//     script.onload = () => {
+//         callback(null, script);
+//     };
+//     script.onerror = () => {
+//         callback("Lỗi rồi!");
+//     };
+//     document.head.appendChild(script);
+// };
+// loadScript("https://www.javascripttutorial.net/javascript-event-loop/", (error, script) => {
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log("script", script);
+//     }
+// });
+
+// const render = () => new Promise((resolve, reject) => {
+//     const status = false;
+//     setTimeout(() => {
+//         if (status) {
+//             resolve([1, 2, 3, 4]);
+//         } else {
+//             reject("Lắc đầu");
+//         }
+//     }, 3000);
+// });
+
+// SỬ dụng then catch để xử lý bất đồng bộ
+// toTinh.then((result) => console.log(result))
+//     .then(() => console.log(1))
+//     .catch((result) => console.log(result));
+
+// Sử dụng async await để xử lý bất đồng bộ!( cú phát es8)
+// const printA = async () => {
+//     try {
+//         const result = await render();
+//         console.log(result);
+//         result.push(5);
+//         console.log(result);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+// printA();

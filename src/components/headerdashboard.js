@@ -3,7 +3,7 @@ const HeaderDashBoard = {
         return /* html */`
             <!-- nav Dashboard -->
                 <ul class="flex items-center relative  ">
-                    <li><a href="#" class="block py-5 px-4 text-4xl text-white hover:opacity-80">DashBoard</a></li>
+                    <li><a href="/admin/news" class="block py-5 px-4 text-4xl text-white hover:opacity-80">DashBoard</a></li>
                     <li><a class="block py-4 px-3 text-white hover:opacity-80" href="/admin/news">News</a></li>
                     <li><a class="block py-4 px-3 text-white hover:opacity-80" href="/admin/news/add">Add News</a></li>
                 </ul>
