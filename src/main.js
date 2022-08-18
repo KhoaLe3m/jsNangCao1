@@ -7,7 +7,6 @@ import AdminPost from "./pages/admin/posts";
 import EditNews from "./pages/editnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
-import News from "./pages/news";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 
