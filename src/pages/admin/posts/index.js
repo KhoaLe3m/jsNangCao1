@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAll } from "../../../api/posts";
+import { getAll, remove } from "../../../api/posts";
 import reRender from "../../../utils/reRender";
 
 const AdminPost = {
@@ -36,8 +36,8 @@ const AdminPost = {
             btn.addEventListener("click", () => {
                 const confirm = window.confirm("Ban co muon xoa dong nay khog?");
                 if (confirm) {
-                    axios.delete(`https://62f88f983eab3503d1d7f03c.mockapi.io/post/${id}`).then(() => {
-                        reRender(AdminPost, "#content");
+                    remove(id).then(() => {
+                        reRender(AdminPost, "#app");
                     });
                 }
             });
