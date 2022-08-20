@@ -1,3 +1,6 @@
+import { signup } from "../api/users";
+import $ from "../utils/selector";
+
 const SignUp = {
     render() {
         return /* html */`
@@ -24,39 +27,42 @@ const SignUp = {
                         <h1 class="mb-4 text-2xl font-bold text-center text-gray-700">
                             Sign up
                         </h1>
-                        <div>
-                            <label class="block text-sm">
-                            Name
-                            </label>
-                            <input type="text"
-                            class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                            placeholder="Name" />
-                        </div>
-                        <div class="mt-4">
-                            <label class="block text-sm">
-                            Email
-                            </label>
-                            <input type="email"
-                            class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                            placeholder="Email Address" />
-                        </div>
-                        <div>
-                            <label class="block mt-4 text-sm">
-                            Password
-                            </label>
-                            <input
-                            class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                            placeholder="Password" type="password" />
-                        </div>
-                        <button
-                            class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
-                            href="#">
-                            Sign up
-                        </button>
+                        <form id="formSignUp">
+                            <div>
+                                <label class="block text-sm">
+                                Name
+                                </label>
+                                <input type="text" id="nameUser"
+                                class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                placeholder="Name" />
+                            </div>
+                            <div class="mt-4">
+                                <label class="block text-sm">
+                                Email
+                                </label>
+                                <input type="email" id="emailUser"
+                                class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                placeholder="Email Address" />
+                            </div>
+                            <div>
+                                <label class="block mt-4 text-sm">
+                                Password
+                                </label>
+                                <input id="passwordUser"
+                                class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                                placeholder="Password" type="password" />
+                            </div>
+                            <button id="btnSignUp"
+                                class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+                                href="#">
+                                Sign up
+                            </button>
+                        </form>
 
                         <div class="mt-4 text-center">
                             <p class="text-sm">Don't have an account yet? <a href="#"
                                 class="text-blue-600 hover:underline"> Sign up.</a></p>
+                        
                         </div>
                         </div>
                     </div>
@@ -65,6 +71,15 @@ const SignUp = {
                 </div>
             <div>
         `;
+    },
+    afterRender() {
+        $("#formSignUp").addEventListener("submit", (e) => {
+            e.preventDefault();
+            signup({
+                email: $("#emailUser").value,
+                password: $("#passwordUser").value,
+            });
+        });
     },
 };
 export default SignUp;

@@ -174,5 +174,18 @@
       "desc": "nội dung bài viết mới 1",
       "id": "YUI4F_U"
     }
+  ],
+  "users": [
+    {
+      "email": "lekhoa733@gmail.com",
+      "password": "$2a$10$nhERbu6k8nMIhdhgLezQGemDoHv4oYmrx9.CE0SiLlWjbkqYfNjUq",
+      "name": "TAN KHOA LE",
+      "id": 1
+    },
+    {
+      "email": "lekhoa7331@gmail.com",
+      "password": "$2a$10$yUNSxuzAlnAQ/JYv8e/UX.Zn7J2E.X/j/mBa9qI5yRpV4ZqgCRmOC",
+      "id": 2
+    }
   ]
 }
