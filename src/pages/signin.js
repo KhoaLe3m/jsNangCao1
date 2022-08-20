@@ -1,45 +1,49 @@
+import { signin } from "../api/users";
 import $ from "../utils/selector";
 
 const SignIn = {
     render() {
         return /* html */` 
+            <div class="max-w-5xl mx-auto">
             <form id="formSignIn">
-                <div class="flex flex-row max-w-5xl mx-auto">
-                    <div class="basis-1/4"></div>
-                    <div class="basis-1/2">
-                        <h1 class="text-center font-bold text-5xl">Login</h1>
-                        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-                        <div class="mb-4">
-                        <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
-                            Username
-                        </label>
-                        <input id="emailUser" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Username">
-                        </div>
-                        <div class="mb-6">
-                        <label id="passwordUser" class="block text-grey-darker text-sm font-bold mb-2" for="password">
-                            Password
-                        </label>
-                        <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************">
-                        <p class="text-red text-xs italic">Please choose a password.</p>
-                        </div>
-                        <div class="flex items-center justify-between">
-                        <button id="btnSignIn" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button">
-                            Sign In
-                        </button>
-                        <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
-                            Forgot Password?
-                        </a>
-                    </div>
+                <div class="mt-4">
+                <label class="block text-sm">
+                Email
+                </label>
+                <input type="email" id="emailUser"
+                class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                placeholder="Email Address" />
                 </div>
-                    </div>
-                    <div class="basis-1/4"></div>
+                <div>
+                <label class="block mt-4 text-sm">
+                Password
+                </label>
+                <input id="passwordUser"
+                class="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                placeholder="Password" type="password" />
                 </div>
-            </form>
+                <button
+                    class="block w-50% px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+                    href="#">
+                    Sign In
+                </button>                
+            <form>     
+            </div>
             `;
     },
     afterRender() {
-        $("btnSignIn").addEventListener("submit", (e) => {
-            e.PreventDefault();
+        $("#formSignIn").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            try {
+                const { data } = await signin({
+                    email: $("#emailUser").value,
+                    password: $("#passwordUser").value,
+                });
+                console.log(data);
+            } catch (error) {
+                alert(error.response.data);
+                $("#formSignIn").reset();
+            }
         });
     },
 };
