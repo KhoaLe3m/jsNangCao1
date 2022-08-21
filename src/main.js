@@ -21,16 +21,15 @@ const printlayout = async (content, id) => {
     }
 };
 
-const userId = JSON.parse(localStorage.getItem("user")).id;
-
 router.on("/admin/*/", () => {
     console.log("Duong dan den trang admin");
 }, {
     before(done) {
+        const userId = JSON.parse(localStorage.getItem("user")).id;
         // do somthing
         if (userId === 2) {
             done();
-        } else {
+        } else if (userId !== 2) {
             document.location.href = "/#/";
         }
     },

@@ -5,179 +5,206 @@
       "title": "Principal Assurance Facilitator",
       "img": "http://loremflickr.com/640/480",
       "desc": "Product",
-      "id": "26"
+      "id": "26",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T14:15:13.890Z",
       "title": "Product Communications Agent",
       "img": "http://loremflickr.com/640/480",
       "desc": "Human",
-      "id": "27"
+      "id": "27",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T16:40:41.773Z",
       "title": "Dynamic Assurance Technician",
       "img": "http://loremflickr.com/640/480",
       "desc": "National",
-      "id": "28"
+      "id": "28",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T13:41:00.694Z",
       "title": "Chief Division Assistant",
       "img": "http://loremflickr.com/640/480",
       "desc": "District",
-      "id": "29"
+      "id": "29",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T18:32:59.759Z",
       "title": "Human Security Planner",
       "img": "http://loremflickr.com/640/480",
       "desc": "Lead",
-      "id": "30"
-    },
-    {
-      "createdAt": "2022-08-13T12:47:44.635Z",
-      "title": "Investor Directives Orchestrator",
-      "img": "http://loremflickr.com/640/480",
-      "desc": "Principal",
-      "id": "31"
+      "id": "30",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T12:19:44.241Z",
       "title": "International Operations Director",
       "img": "http://loremflickr.com/640/480",
       "desc": "Corporate",
-      "id": "32"
+      "id": "32",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T19:58:44.071Z",
       "title": "Legacy Tactics Director",
       "img": "http://loremflickr.com/640/480",
       "desc": "National",
-      "id": "33"
+      "id": "33",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T21:25:57.640Z",
       "title": "Legacy Applications Engineer",
       "img": "http://loremflickr.com/640/480",
       "desc": "Internal",
-      "id": "34"
+      "id": "34",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T09:43:05.758Z",
       "title": "Internal Markets Executive",
       "img": "http://loremflickr.com/640/480",
       "desc": "Central",
-      "id": "35"
+      "id": "35",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-14T05:57:22.271Z",
       "title": "National Implementation Liaison",
       "img": "http://loremflickr.com/640/480",
       "desc": "Future",
-      "id": "36"
+      "id": "36",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T06:29:40.956Z",
       "title": "Dynamic Assurance Liaison",
       "img": "http://loremflickr.com/640/480",
       "desc": "Lead",
-      "id": "37"
+      "id": "37",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T16:28:53.813Z",
       "title": "Corporate Intranet Director",
       "img": "http://loremflickr.com/640/480",
       "desc": "Central",
-      "id": "38"
+      "id": "38",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-14T02:40:03.710Z",
       "title": "Investor Applications Associate",
       "img": "http://loremflickr.com/640/480",
       "desc": "National",
-      "id": "39"
+      "id": "39",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T08:06:31.558Z",
       "title": "Human Solutions Liaison",
       "img": "http://loremflickr.com/640/480",
       "desc": "Dynamic",
-      "id": "40"
+      "id": "40",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T08:35:44.822Z",
       "title": "Dynamic Web Engineer",
       "img": "http://loremflickr.com/640/480",
       "desc": "Regional",
-      "id": "41"
+      "id": "41",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T18:12:40.481Z",
       "title": "Investor Brand Liaison",
       "img": "http://loremflickr.com/640/480",
       "desc": "Global",
-      "id": "42"
+      "id": "42",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-13T11:42:02.658Z",
       "title": "Human Creative Officer",
       "img": "http://loremflickr.com/640/480",
       "desc": "Chief",
-      "id": "43"
+      "id": "43",
+      "categoryPostId":2
     },
     {
       "createdAt": "2022-08-13T06:36:49.426Z",
       "title": "Investor Tactics Analyst",
       "img": "http://loremflickr.com/640/480",
       "desc": "District",
-      "id": "44"
+      "id": "44",
+      "categoryPostId":2
     },
     {
       "createdAt": "2022-08-13T08:04:19.940Z",
       "title": "Customer Optimization Producer",
       "img": "http://loremflickr.com/640/480",
       "desc": "Investor",
-      "id": "45"
+      "id": "45",
+      "categoryPostId":2
     },
     {
       "createdAt": "2022-08-13T17:17:22.881Z",
       "title": "Global Operations Supervisor",
       "img": "http://loremflickr.com/640/480",
       "desc": "Forward",
-      "id": "46"
+      "id": "46",
+      "categoryPostId":2
     },
     {
       "createdAt": "2022-08-13T10:58:07.121Z",
       "title": "Forward Metrics Analyst",
       "img": "http://loremflickr.com/640/480",
       "desc": "Legacy",
-      "id": "47"
+      "id": "47",
+      "categoryPostId":1
     },
     {
       "createdAt": "2022-08-14T00:54:31.460Z",
       "title": "Lead Directives Representative",
       "img": "http://loremflickr.com/640/480",
       "desc": "Internal",
-      "id": "48"
+      "id": "48",
+      "categoryPostId":1
     },
     {
       "title": "bài viết mới 1",
       "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1660816562/qlorxiioabbldgrqrmx2.png",
       "desc": "nội dung bài viết mới 1",
-      "id": "YUI4F_U"
+      "id": "YUI4F_U",
+      "categoryPostId":1
     },
     {
       "title": "bài viết mới2",
       "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661050661/ofvbtdmh2iiprii6qpvj.jpg",
       "desc": "noi dung bai viet 2",
-      "id": "__cgQvL"
+      "id": "__cgQvL",
+      "categoryPostId":1
     },
     {
       "title": "bài viết mới2",
       "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661050670/s85qsjq8ga7s99fv4cpo.jpg",
       "desc": "noi dung bai viet 2",
-      "id": "L0-AXTC"
+      "id": "L0-AXTC",
+      "categoryPostId":1
+    }
+  ],
+  "categoryPosts":[
+    { "id": 1,
+      "name": "Danh mục bài viết 1"
+    },
+    {
+      "id": 2,
+      "name": "Danh mục bài viết 2"
     }
   ],
   "users": [

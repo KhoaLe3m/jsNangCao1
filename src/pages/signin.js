@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import { signin } from "../api/users";
 import $ from "../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const SignIn = {
     render() {
@@ -41,13 +43,16 @@ const SignIn = {
                 });
                 console.log(data);
                 localStorage.setItem("user", JSON.stringify(data.user));
-                if (data.user.id === 2) {
-                    document.location.href = "/#/admins/new";
-                } else {
-                    document.location.href = "/#";
-                }
+                toastr.success("Bạn đã đăng nhập thành công!,chuyển trang");
+                setTimeout(() => {
+                    if (data.user.id === 2) {
+                        document.location.href = "/admin/news";
+                    } else {
+                        document.location.href = "/#";
+                    }
+                }, 3000);
             } catch (error) {
-                alert(error.response.data);
+                toastr.error(error.response.data);
                 $("#formSignIn").reset();
             }
         });

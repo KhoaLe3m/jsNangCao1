@@ -73,9 +73,9 @@ const SignUp = {
         `;
     },
     afterRender() {
-        $("#formSignUp").addEventListener("submit", (e) => {
+        $("#formSignUp").addEventListener("submit", async (e) => {
             e.preventDefault();
-            signup({
+            await signup({
                 email: $("#emailUser").value,
                 password: $("#passwordUser").value,
             });
