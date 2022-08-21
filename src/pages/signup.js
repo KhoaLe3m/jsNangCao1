@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import { signup } from "../api/users";
 import $ from "../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const SignUp = {
     render() {
@@ -75,10 +77,19 @@ const SignUp = {
     afterRender() {
         $("#formSignUp").addEventListener("submit", async (e) => {
             e.preventDefault();
-            await signup({
-                email: $("#emailUser").value,
-                password: $("#passwordUser").value,
-            });
+            try {
+                await signup({
+                    email: $("#emailUser").value,
+                    password: $("#passwordUser").value,
+                });
+                toastr.success("Đăng kí thành công!,chuyển trang đăng nhập!");
+                setTimeout(() => {
+                    document.location.href = "/signin";
+                }, 3000);
+            } catch (error) {
+                toastr.error(error.response.data);
+                $("#formSignUp").reset();
+            }
         });
     },
 };
