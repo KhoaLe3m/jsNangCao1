@@ -40,6 +40,12 @@ const SignIn = {
                     password: $("#passwordUser").value,
                 });
                 console.log(data);
+                localStorage.setItem("user", JSON.stringify(data.user));
+                if (data.user.id === 2) {
+                    document.location.href = "/#/admins/new";
+                } else {
+                    document.location.href = "/#";
+                }
             } catch (error) {
                 alert(error.response.data);
                 $("#formSignIn").reset();

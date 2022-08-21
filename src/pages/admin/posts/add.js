@@ -1,5 +1,6 @@
 import axios from "axios";
 import { add } from "../../../api/posts";
+import $ from "../../../utils/selector";
 
 const addNews = {
     render() {
@@ -7,7 +8,7 @@ const addNews = {
             <form id="formAddPost" class="max-w-5xl mx-auto flex flex-row">
                 <div class="basis-1/5"></div>
                 <div class="basis-3/5 border">
-                <
+                
                 <div class="mx-3 my-2">
                     <label for="exampleFormControlInput1" class="form-label inline-block pt-3 mb-2 text-gray-700">Title</label>
                     <input type="text" id="title-post" placeholder="Enter Title"
@@ -34,11 +35,9 @@ const addNews = {
         `;
     },
     afterRender() {
-        const formAddPost = document.querySelector("#formAddPost");
         const CLOUDINARY_PRESET_KEY = "suzfqxpd";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dzl3gqizk/image/upload";
-
-        formAddPost.addEventListener("submit", async (e) => {
+        $("#formAddPost").addEventListener("submit", async (e) => {
             e.preventDefault();
             const file = document.querySelector("#img-post").files[0];
             const formData = new FormData();

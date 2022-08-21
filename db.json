@@ -1,13 +1,6 @@
 {
   "post": [
     {
-      "createdAt": "2022-08-14T03:31:40.468Z",
-      "title": "Future Directives Designer",
-      "img": "http://loremflickr.com/640/480",
-      "desc": "Investor",
-      "id": "25"
-    },
-    {
       "createdAt": "2022-08-14T03:17:29.172Z",
       "title": "Principal Assurance Facilitator",
       "img": "http://loremflickr.com/640/480",
@@ -173,6 +166,18 @@
       "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1660816562/qlorxiioabbldgrqrmx2.png",
       "desc": "nội dung bài viết mới 1",
       "id": "YUI4F_U"
+    },
+    {
+      "title": "bài viết mới2",
+      "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661050661/ofvbtdmh2iiprii6qpvj.jpg",
+      "desc": "noi dung bai viet 2",
+      "id": "__cgQvL"
+    },
+    {
+      "title": "bài viết mới2",
+      "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661050670/s85qsjq8ga7s99fv4cpo.jpg",
+      "desc": "noi dung bai viet 2",
+      "id": "L0-AXTC"
     }
   ],
   "users": [
@@ -186,6 +191,11 @@
       "email": "lekhoa7331@gmail.com",
       "password": "$2a$10$yUNSxuzAlnAQ/JYv8e/UX.Zn7J2E.X/j/mBa9qI5yRpV4ZqgCRmOC",
       "id": 2
+    },
+    {
+      "email": "lekhoa7332@gmail.com",
+      "password": "$2a$10$XNjCUJ3m1m3F2t0R7SqCI.mTdJZgcxxlCKwzhqa2cyv/Mvp.k3qAa",
+      "id": 3
     }
   ]
 }
