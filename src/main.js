@@ -12,9 +12,7 @@ import SignUp from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, id) => {
-    document.getElementById("header").innerHTML = Header.render();
     document.getElementById("app").innerHTML = await content.render(id);
-    document.getElementById("footer").innerHTML = Footer.render();
 
     if (content.afterRender) {
         content.afterRender();
@@ -22,15 +20,18 @@ const printlayout = async (content, id) => {
 };
 
 router.on("/admin/*/", () => {
-    console.log("Duong dan den trang admin");
 }, {
     before(done) {
-        const userId = JSON.parse(localStorage.getItem("user")).id;
-        // do somthing
-        if (userId === 2) {
-            done();
-        } else if (userId !== 2) {
-            document.location.href = "/#/";
+        if (localStorage.getItem("user")) {
+            const userId = JSON.parse(localStorage.getItem("user")).id;
+            // do somthing
+            if (userId === 2) {
+                done();
+            } else if (userId !== 2) {
+                document.location.href = "/#/";
+            }
+        } else {
+            document.location.href = "/#";
         }
     },
 });

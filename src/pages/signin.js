@@ -41,7 +41,6 @@ const SignIn = {
                     email: $("#emailUser").value,
                     password: $("#passwordUser").value,
                 });
-                console.log(data);
                 localStorage.setItem("user", JSON.stringify(data.user));
                 toastr.success("Bạn đã đăng nhập thành công!,chuyển trang");
                 setTimeout(() => {
