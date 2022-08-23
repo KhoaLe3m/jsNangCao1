@@ -245,5 +245,23 @@
       "password": "$2a$10$S1W14PiTJpMIqtBDrBee1eOA/vtCLEslw26RRfH.L6q6aJdHXEeym",
       "id": 7
     }
+  ],
+  "products":[
+    {
+      "createdAt": "2022-08-14T03:17:29.172Z",
+      "name": "Product A",
+      "price": 100,
+      "img": "http://loremflickr.com/640/480",
+      "desc": "Detail Product A",
+      "id": "1"
+    },
+    {
+      "createdAt": "2022-08-14T03:17:29.172Z",
+      "name": "Product B",
+      "price": 200,
+      "img": "http://loremflickr.com/640/480",
+      "desc": "Detail Product B",
+      "id": "2"
+    }
   ]
 }

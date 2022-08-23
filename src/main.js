@@ -7,6 +7,8 @@ import addNews from "./pages/admin/posts/add";
 import EditNews from "./pages/editnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
+import ProductPage from "./pages/products";
+import ProductDetail from "./pages/products/detailProduct";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 
@@ -15,7 +17,7 @@ const printlayout = async (content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
 
     if (content.afterRender) {
-        content.afterRender();
+        content.afterRender(id);
     }
 };
 
@@ -46,6 +48,13 @@ router.on({
     "/news/:id": ({ data }) => {
         const { id } = data;
         printlayout(NewsDetail, id);
+    },
+    "/products": () => {
+        printlayout(ProductPage);
+    },
+    "/products/:id": ({ data }) => {
+        const { id } = data;
+        printlayout(ProductDetail, id);
     },
     "/signin": () => {
         printlayout(SignIn);
