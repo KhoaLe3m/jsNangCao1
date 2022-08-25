@@ -1,15 +1,10 @@
-import axios from "axios";
 import { getAll } from "../../api/products";
-import Header from "../../components/header";
 
 const ProductPage = {
     async render() {
         const { data } = await getAll();
         return /* html */`
             <div class="max-w-5xl mx-auto">
-                <div id="Header">
-                    ${Header.render()}
-                </div>
                 <div class="banner">
                     <img src="https://picsum.photos/2048/300">
                 </div>
@@ -31,9 +26,5 @@ const ProductPage = {
             </div>
         `;
     },
-    afterRender() {
-        Header.afterRender();
-    },
-
 };
 export default ProductPage;

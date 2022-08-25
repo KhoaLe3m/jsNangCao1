@@ -250,7 +250,7 @@
     {
       "createdAt": "2022-08-14T03:17:29.172Z",
       "name": "Product A",
-      "price": 100,
+      "price": 10000,
       "img": "http://loremflickr.com/640/480",
       "desc": "Detail Product A",
       "id": "1"
@@ -258,7 +258,7 @@
     {
       "createdAt": "2022-08-14T03:17:29.172Z",
       "name": "Product B",
-      "price": 200,
+      "price": 20000,
       "img": "http://loremflickr.com/640/480",
       "desc": "Detail Product B",
       "id": "2"

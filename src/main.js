@@ -12,13 +12,21 @@ import ProductPage from "./pages/products";
 import ProductDetail from "./pages/products/detailProduct";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
-import reRender from "./utils/reRender";
+import Nav from "./components/nav";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const printlayout = async (content, id) => {
+const printlayout = async (content, header, id) => {
+    document.getElementById("header").innerHTML = await header.render();
     document.getElementById("app").innerHTML = await content.render(id);
+    document.getElementById("footer").innerHTML = await Footer.render();
+    if (Nav.afterRender) {
+        Nav.afterRender();
+    }
     if (content.afterRender) {
         content.afterRender(id);
+    }
+    if (header.afterRender) {
+        Header.afterRender(id);
     }
 };
 
@@ -38,43 +46,63 @@ router.on("/admin/*/", () => {
         }
     },
 });
+router.on("/signin", () => {
+}, {
+    before(done) {
+        if (localStorage.getItem("user")) {
+            document.location.href = "/#";
+        } else {
+            done();
+        }
+    },
+});
+router.on("/signup", () => {
+}, {
+    before(done) {
+        if (localStorage.getItem("user")) {
+            document.location.href = "/#";
+        } else {
+            done();
+        }
+    },
+});
 
 router.on({
     "/": () => {
-        printlayout(HomePage);
+        printlayout(HomePage, Header);
     },
     "/about": () => {
-        printlayout(AboutPage);
+        printlayout(AboutPage, Header);
     },
     "/news/:id": ({ data }) => {
         const { id } = data;
-        printlayout(NewsDetail, id);
+        printlayout(NewsDetail, Header, id);
     },
     "/products": () => {
-        printlayout(ProductPage);
+        printlayout(ProductPage, Header);
     },
     "/products/:id": ({ data }) => {
         const { id } = data;
-        printlayout(ProductDetail, id);
+        printlayout(ProductDetail, Header, id);
     },
     "/signin": () => {
-        printlayout(SignIn);
+        printlayout(SignIn, Header);
     },
     "/signup": () => {
-        printlayout(SignUp);
+        printlayout(SignUp, Header);
     },
     "/cart": () => {
-        printlayout(CartPage);
+        printlayout(CartPage, Header);
     },
     "admin/news": () => {
-        printlayout(AdminPost);
+        printlayout(AdminPost, Header);
     },
     "admin/news/add": () => {
-        printlayout(addNews);
+        printlayout(addNews, Header);
     },
     "admin/news/:id/edit": ({ data }) => {
         const { id } = data;
-        printlayout(EditNews, id);
+        printlayout(EditNews, Header, id);
     },
 });
 router.resolve();

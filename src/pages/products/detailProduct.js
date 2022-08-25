@@ -1,10 +1,11 @@
+import toastr from "toastr";
 import { get } from "../../api/products";
 import { addToCart } from "../../utils/carts";
 import $ from "../../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const ProductDetail = {
     async render(id) {
-        console.log(id);
         const { data } = await get(id);
         // return `Detail`;
         return `<div class="max-w-5xl mx-auto">
@@ -22,11 +23,16 @@ const ProductDetail = {
         `;
     },
     afterRender(id) {
-        console.log(id);
         $("#btnAddToCart").addEventListener("click", async () => {
-            const { data } = await get(id);
-            console.log(data);
-            addToCart({ ...data, quantity: $("#inputValue").value ? Number($("#inputValue").value) : 1 });
+            try {
+                const { data } = await get(id);
+                toastr.success("Thêm sản phẩm vào giỏ hàng thành công");
+                addToCart({ ...data, quantity: $("#inputValue").value ? Number($("#inputValue").value) : 1 });
+                $("#inputValue").reset();
+            } catch (error) {
+                toastr.error(error.response.data);
+                $("#inputValue").reset();
+            }
         });
     },
 };

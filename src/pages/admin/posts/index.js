@@ -1,4 +1,3 @@
-import axios from "axios";
 import { getAll, remove } from "../../../api/posts";
 import reRender from "../../../utils/reRender";
 
