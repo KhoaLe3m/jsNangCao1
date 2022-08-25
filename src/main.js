@@ -4,6 +4,7 @@ import Header from "./components/header";
 import AboutPage from "./pages/About";
 import AdminPost from "./pages/admin/posts";
 import addNews from "./pages/admin/posts/add";
+import CartPage from "./pages/cart";
 import EditNews from "./pages/editnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
@@ -11,11 +12,11 @@ import ProductPage from "./pages/products";
 import ProductDetail from "./pages/products/detailProduct";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
+import reRender from "./utils/reRender";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
-
     if (content.afterRender) {
         content.afterRender(id);
     }
@@ -61,6 +62,9 @@ router.on({
     },
     "/signup": () => {
         printlayout(SignUp);
+    },
+    "/cart": () => {
+        printlayout(CartPage);
     },
     "admin/news": () => {
         printlayout(AdminPost);

@@ -1,5 +1,5 @@
 import { get } from "../../api/products";
-import addToCart from "../../utils/carts";
+import { addToCart } from "../../utils/carts";
 import $ from "../../utils/selector";
 
 const ProductDetail = {
@@ -26,7 +26,7 @@ const ProductDetail = {
         $("#btnAddToCart").addEventListener("click", async () => {
             const { data } = await get(id);
             console.log(data);
-            addToCart({ ...data, quantity: $("#inputValue").value ? $("#inputValue").value : 1 });
+            addToCart({ ...data, quantity: $("#inputValue").value ? Number($("#inputValue").value) : 1 });
         });
     },
 };
