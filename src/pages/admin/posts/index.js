@@ -10,15 +10,22 @@ const AdminPost = {
                     <img src="https://picsum.photos/2048/300">
                 </div>
                 <div class="news">
-                    <h1>Quan ly tin tuc</h1>
-                    <table>
+                    <h1 class="text-2xl text-center text-blue-800">Quản lý tin tức</h1>
+                    <table class="border table-auto text-lg w-full text-left">
+                        <thead class="bg-gray-300">
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
                         <tbody>
                         ${data.map((post, index) => `
                         <tr>
                             <td>${index + 1}</td>
                             <td>${post.title}</td>
                             <td>
-                                <button data-id="${post.id}" class="btn">Remove</button>
+                                <button data-id="${post.id}" class="btn border p-1 bg-red-400 rounded-md">Remove</button>
                             </td>
                         </tr>
                         `).join("")}

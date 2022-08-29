@@ -81,6 +81,7 @@ const SignUp = {
                 await signup({
                     email: $("#emailUser").value,
                     password: $("#passwordUser").value,
+                    name: $("nameUser").value,
                 });
                 toastr.success("Đăng kí thành công!,chuyển trang đăng nhập!");
                 setTimeout(() => {

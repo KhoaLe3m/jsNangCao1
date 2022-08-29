@@ -3,18 +3,28 @@ import reRender from "../utils/reRender";
 const Nav = {
     render() {
         return /* html */ `
-            <nav class="flex  justify-between">
-                <ul class=" flex">
-                    <li><a href="/" class="block  py-3 px-4 text-white hover:bg-blue-500">Home Page</a></li>
-                    <li><a href="/about"  class="block  py-3 px-4 text-white hover:bg-blue-500">About Page</a></li>
-                    <li><a href="/products" class="block  py-3 px-4 text-white hover:bg-blue-500">Product Page</a></li>
+            <nav class="flex  justify-between  ">
+                <ul class="flex items-center ">
+                <li class="mr-6">
+                <a class="text-blue-500 hover:text-blue-800" href="/#/"><img src="https://cdn.printgo.vn/uploads/media/772948/thiet-ke-logo-shop-giay-15_1584094947.jpg" width="65px" alt=""></a>
+                </li>
+                <li class="mr-6">
+                <a class="text-blue-500 hover:text-blue-800" href="/products">Nike</a>
+                </li>
+                <li class="mr-6">
+                <a class="text-blue-500 hover:text-blue-800" href="#">Adidas</a>
+                </li>
+                <li class="mr-6">
+                <a class="text-blue-500 hover:text-blue-800" href="#">Converse</a>
+                </li>
                 </ul>
-                ${localStorage.getItem("user") ? `<ul class=" flex ">
-                <li class="flex items-center" >Hello<span class="block  py-3 px-4 text-white" id="username"></span></li>
-                <li ><a  class="block  py-3 px-4 text-white hover:bg-blue-500" id="logout">Log out</a></li>
-            </ul>` : `<ul class=" flex ">
-            <li class="flex items-center" ><a href="/signin" class="block  py-3 px-4 text-white hover:bg-blue-500">Sign In</a></li>
-            <li ><a href="/signup" class="block  py-3 px-4 text-white hover:bg-blue-500">Sign Up</a></li>
+                ${localStorage.getItem("user") ? `<ul class=" flex items-center text-center  ">
+                <li class="flex  " ><p class="mt-3">Hello</p><span class="block  py-3 px-4 text-white hover:text-blue-800" id="username"></span></li>
+                <li ><a href="/cart" class="  py-3 px-4 text-white hover:text-blue-800" id="cart"><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li ><a  class="  py-3 px-4 text-white hover:text-blue-800" id="logout">Log out</a></li>
+            </ul>` : `<ul class=" flex items-center  ">
+            <li class="flex  " ><a href="/signin" class="block  py-3 px-4 text-white hover:text-blue-800">Sign In</a></li>
+            <li ><a href="/signup" class="block  py-3 px-4 text-white hover:text-blue-800">Sign Up</a></li>
             </ul>`
 }
             </nav>

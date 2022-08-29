@@ -14,6 +14,7 @@ const CartPage = {
             }
             return `
             <div class="max-w-5xl mx-auto">
+                <h1 class="text-3xl text-center text-blue-300">Giỏ Hàng</h1>
                 <table class=" w-full">
                     <thead class="bg-gray-200 ">
                         <tr>

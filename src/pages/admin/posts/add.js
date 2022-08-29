@@ -37,23 +37,29 @@ const addNews = {
     afterRender() {
         const CLOUDINARY_PRESET_KEY = "suzfqxpd";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dzl3gqizk/image/upload";
+        let fileImg = "";
         $("#formAddPost").addEventListener("submit", async (e) => {
             e.preventDefault();
+
             const file = document.querySelector("#img-post").files[0];
-            const formData = new FormData();
-            // Lấy giá trị của file rồi gán vào obj FormData
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET_KEY);
-            // call api cloudinary để đẩy ảnh lên
-            const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
-                headers: {
-                    "Content-Type": "application/form-data",
-                },
-            });
+            if (file) {
+                const formData = new FormData();
+                // Lấy giá trị của file rồi gán vào obj FormData
+                formData.append("file", file);
+                formData.append("upload_preset", CLOUDINARY_PRESET_KEY);
+                // call api cloudinary để đẩy ảnh lên
+                const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                    headers: {
+                        "Content-Type": "application/form-data",
+                    },
+                });
+                fileImg = data;
+            }
+
             // call api thêm bài viết
             add({
                 title: document.querySelector("#title-post").value,
-                img: data.url,
+                img: fileImg || "",
                 desc: document.querySelector("#desc-post").value,
             });
         });

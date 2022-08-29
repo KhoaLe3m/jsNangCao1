@@ -1,9 +1,11 @@
 const Footer = {
     render() {
         return `
-            <footer class="max-w-5xl mx-auto text-center py-4 bg-blue-800">
+            <div class="block">
+            <footer class="max-w text-center py-4 bg-blue-800 ">
                 Le Tan Khoa
             </footer>
+            <div>
         `;
     },
 };
