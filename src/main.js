@@ -5,7 +5,6 @@ import AboutPage from "./pages/About";
 import AdminPost from "./pages/admin/posts";
 import addNews from "./pages/admin/posts/add";
 import CartPage from "./pages/cart";
-import EditNews from "./pages/editnews";
 import HomePage from "./pages/Home";
 import NewsDetail from "./pages/newDetail";
 import ProductPage from "./pages/products";
@@ -13,6 +12,7 @@ import ProductDetail from "./pages/products/detailProduct";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import Nav from "./components/nav";
+import editNews from "./pages/admin/posts/edit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -102,7 +102,7 @@ router.on({
     },
     "admin/news/:id/edit": ({ data }) => {
         const { id } = data;
-        printlayout(EditNews, Header, id);
+        printlayout(editNews, Header, id);
     },
 });
 router.resolve();

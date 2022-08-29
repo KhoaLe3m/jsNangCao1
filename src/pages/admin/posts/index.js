@@ -25,7 +25,8 @@ const AdminPost = {
                             <td>${index + 1}</td>
                             <td>${post.title}</td>
                             <td>
-                                <button data-id="${post.id}" class="btn border p-1 bg-red-400 rounded-md">Remove</button>
+                                <a class="p-1 rounded-md bg-red-300 border" href="/admin/news/${post.id}/edit">Edit</a>
+                                <button data-id="${post.id}" class="btn border p-1 bg-blue-400 rounded-md">Remove</button>
                             </td>
                         </tr>
                         `).join("")}
