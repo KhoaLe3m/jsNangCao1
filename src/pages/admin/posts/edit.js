@@ -1,6 +1,8 @@
 import axios from "axios";
+import toastr from "toastr";
 import { edit, get } from "../../../api/posts";
 import $ from "../../../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const editNews = {
     async render(id) {
@@ -68,12 +70,20 @@ const editNews = {
             }
 
             // call api Sửa bài viết
-            await edit({
-                id,
-                title: document.querySelector("#title-post").value,
-                img: fileImg || imgPreview.src,
-                desc: document.querySelector("#desc-post").value,
-            });
+            try {
+                await edit({
+                    id,
+                    title: document.querySelector("#title-post").value,
+                    img: fileImg || imgPreview.src,
+                    desc: document.querySelector("#desc-post").value,
+                });
+                toastr.success("Sửa thành công!");
+                setTimeout(() => {
+                    document.location.href = "/admin/news";
+                }, 2000);
+            } catch (error) {
+                toastr.error(error.response.data);
+            }
         });
     },
 };

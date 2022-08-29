@@ -1,6 +1,8 @@
 import axios from "axios";
+import toastr from "toastr";
 import { add } from "../../../api/posts";
 import $ from "../../../utils/selector";
+import "toastr/build/toastr.min.css";
 
 const addNews = {
     render() {
@@ -13,14 +15,14 @@ const addNews = {
                     <label for="exampleFormControlInput1" class="form-label inline-block pt-3 mb-2 text-gray-700">Title</label>
                     <input type="text" id="title-post" placeholder="Enter Title"
                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"/>
-                    <img src="" id="img-preview" />
                         </div>
-                <div>
-                <div class="mx-3 my-2">
-                    <label for="img-post" class="form-label inline-block pt-3 mb-2 text-gray-700">Image</label>
-                    <input type="file" id="img-post" placeholder="Choose File"
+                        <div>
+                        <div class="mx-3 my-2">
+                        <label for="img-post" class="form-label inline-block pt-3 mb-2 text-gray-700">Image</label>
+                        <input type="file" id="img-post" placeholder="Choose File"
                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"/>
-                    </div>
+                        <img src="" id="img-preview" />
+                        </div>
                 <div>
                 <div class="mx-3 my-2 ">
                     <label for="exampleFormControlInput1" class="form-label inline-block pt-3 mb-2 text-gray-700">Image</label>
@@ -38,6 +40,11 @@ const addNews = {
     afterRender() {
         const CLOUDINARY_PRESET_KEY = "suzfqxpd";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dzl3gqizk/image/upload";
+        const imgPreview = document.querySelector("#img-preview");
+        const imgPost = document.querySelector("#img-post");
+        imgPost.addEventListener("change", (e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
         let fileImg = "";
         $("#formAddPost").addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -54,15 +61,23 @@ const addNews = {
                         "Content-Type": "application/form-data",
                     },
                 });
-                fileImg = data;
+                fileImg = data.url;
             }
 
             // call api thêm bài viết
-            add({
-                title: document.querySelector("#title-post").value,
-                img: fileImg || "",
-                desc: document.querySelector("#desc-post").value,
-            });
+            try {
+                await add({
+                    title: document.querySelector("#title-post").value,
+                    img: fileImg || "",
+                    desc: document.querySelector("#desc-post").value,
+                });
+                toastr.success("Thêm thành công");
+                setTimeout(() => {
+                    document.location.href = "/admin/news";
+                }, 2000);
+            } catch (error) {
+                toastr.error(error.response.data);
+            }
         });
     },
 };

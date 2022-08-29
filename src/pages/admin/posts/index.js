@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import { getAll, remove } from "../../../api/posts";
 import reRender from "../../../utils/reRender";
+import "toastr/build/toastr.min.css";
 
 const AdminPost = {
     async render() {
@@ -43,9 +45,14 @@ const AdminPost = {
             btn.addEventListener("click", () => {
                 const confirm = window.confirm("Ban co muon xoa dong nay khog?");
                 if (confirm) {
-                    remove(id).then(() => {
-                        reRender(AdminPost, "#app");
-                    });
+                    try {
+                        remove(id).then(() => {
+                            reRender(AdminPost, "#app");
+                        });
+                        toastr.success("Xóa thành công!");
+                    } catch (error) {
+                        toastr.error(error.response.data);
+                    }
                 }
             });
         });
