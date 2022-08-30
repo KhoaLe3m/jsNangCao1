@@ -43,7 +43,7 @@ const AdminPost = {
         btns.forEach((btn) => {
             const { id } = btn.dataset;
             btn.addEventListener("click", () => {
-                const confirm = window.confirm("Ban co muon xoa dong nay khog?");
+                const confirm = window.confirm("Bạn có muốn xóa dòng này không?");
                 if (confirm) {
                     try {
                         remove(id).then(() => {
