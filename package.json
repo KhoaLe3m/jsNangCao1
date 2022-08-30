@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "jquery-validation": "^1.19.5",
     "navigo": "^8.11.1",
     "toastr": "^2.1.4"
   }
