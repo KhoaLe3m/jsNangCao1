@@ -1,4 +1,6 @@
-import { getAll } from "../../../api/products";
+import toastr from "toastr";
+import { getAll, remove } from "../../../api/products";
+import reRender from "../../../utils/reRender";
 
 const AdminProducts = {
     async render() {
@@ -27,8 +29,8 @@ const AdminProducts = {
                             <td class="border border-slate-300 pr-3 pl-3">${product.price.toLocaleString("vi", { style: "currency", currency: "VND" })}</td>
                             <td class="border border-slate-300 pr-3 pl-3"><img src="${product.img}" height="150px" width="150px" /></td>
                             <td class="border border-slate-300 pr-3 pl-3">${product.desc}</td>
-                            <td class="border border-slate-300 pr-3 pl-3"><button class="text-yellow-300"><i class="fa-solid fa-pen-to-square inline-block btn"></i>Sửa<button></td>
-                            <td class="border border-slate-300 pr-3 pl-3"><button class="text-red-500"><i class="fa-solid fa-trash-can-xmark btn"></i>Xóa<button></td>
+                            <td class="border border-slate-300 pr-3 pl-3"><a href="/admin/products/${product.id}/edit" class="text-yellow-300"><i class="fa-solid fa-pen-to-square inline-block btn"></i>Sửa<a></td>
+                            <td class="border border-slate-300 pr-3 pl-3"><button data-id="${product.id}" class="text-red-500 btn"><i class="fa-solid fa-trash-can-xmark "></i>Xóa<button></td>
                         </tr>
                     `).join("")}
                     </tbody>
@@ -37,7 +39,23 @@ const AdminProducts = {
         `;
     },
     afterRender() {
-
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach((btn) => {
+            const { id } = btn.dataset;
+            btn.addEventListener("click", () => {
+                const confirm = window.confirm("Bạn có muốn xóa dòng này không?");
+                if (confirm) {
+                    try {
+                        remove(id).then(() => {
+                            reRender(AdminProducts, "#app");
+                        });
+                        toastr.success("Xóa thành công!");
+                    } catch (error) {
+                        toastr.error(error.response.data);
+                    }
+                }
+            });
+        });
     },
 };
 export default AdminProducts;

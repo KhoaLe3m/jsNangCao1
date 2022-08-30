@@ -16,6 +16,7 @@ import editNews from "./pages/admin/posts/edit";
 import HeaderDashBoard from "./components/headerdashboard";
 import AdminProducts from "./pages/admin/products";
 import addProduct from "./pages/admin/products/add";
+import editProduct from "./pages/admin/products/edit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -112,6 +113,10 @@ router.on({
     },
     "admin/products/add": () => {
         printlayout(addProduct, HeaderDashBoard);
+    },
+    "admin/products/:id/edit": ({ data }) => {
+        const { id } = data;
+        printlayout(editProduct, HeaderDashBoard, id);
     },
 });
 router.resolve();

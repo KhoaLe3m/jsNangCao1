@@ -98,11 +98,11 @@ const addProduct = {
                     try {
                         await add({
                             name: document.querySelector("#name-product").value,
-                            price: document.querySelector("#price-product").value,
+                            price: Number(document.querySelector("#price-product").value),
                             img: fileImg || "",
                             desc: document.querySelector("#desc-product").value,
                         });
-                        toastr.success("Thêm thành công");
+                        toastr.success("Sửa thành công");
                         setTimeout(() => {
                             document.location.href = "/admin/products";
                         }, 2000);
