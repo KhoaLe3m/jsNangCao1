@@ -13,6 +13,9 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import Nav from "./components/nav";
 import editNews from "./pages/admin/posts/edit";
+import HeaderDashBoard from "./components/headerdashboard";
+import AdminProducts from "./pages/admin/products";
+import addProduct from "./pages/admin/products/add";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -95,14 +98,20 @@ router.on({
         printlayout(CartPage, Header);
     },
     "admin/news": () => {
-        printlayout(AdminPost, Header);
+        printlayout(AdminPost, HeaderDashBoard);
     },
     "admin/news/add": () => {
-        printlayout(addNews, Header);
+        printlayout(addNews, HeaderDashBoard);
     },
     "admin/news/:id/edit": ({ data }) => {
         const { id } = data;
-        printlayout(editNews, Header, id);
+        printlayout(editNews, HeaderDashBoard, id);
+    },
+    "admin/products": () => {
+        printlayout(AdminProducts, HeaderDashBoard);
+    },
+    "admin/products/add": () => {
+        printlayout(addProduct, HeaderDashBoard);
     },
 });
 router.resolve();
