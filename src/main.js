@@ -17,6 +17,7 @@ import HeaderDashBoard from "./components/headerdashboard";
 import AdminProducts from "./pages/admin/products";
 import addProduct from "./pages/admin/products/add";
 import editProduct from "./pages/admin/products/edit";
+import pageOrder from "./pages/order";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -97,6 +98,9 @@ router.on({
     },
     "/cart": () => {
         printlayout(CartPage, Header);
+    },
+    "/order": () => {
+        printlayout(pageOrder, Header);
     },
     "admin/news": () => {
         printlayout(AdminPost, HeaderDashBoard);

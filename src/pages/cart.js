@@ -43,6 +43,9 @@ const CartPage = {
                     <tr cellpadding="0px" cellspacing="0px">
                         <td colspan='5' style='text-align:right'><h1>Tổng tiền = ${sum.toLocaleString("vi", { style: "currency", currency: "VND" })}</h1></td>
                     </tr>
+                    <tr cellpadding="0px" cellspacing="0px">
+                        <td colspan='5' style='text-align:right'><a href="/order" class="border-2 p-2 inline-block rounded-md bg-blue-300"><i class="fa-solid fa-cart-shopping"></i> Đặt hàng</a></td>
+                    </tr>
                 </table>
                 
             </div>
