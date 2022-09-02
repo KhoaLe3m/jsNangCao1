@@ -18,6 +18,7 @@ import AdminProducts from "./pages/admin/products";
 import addProduct from "./pages/admin/products/add";
 import editProduct from "./pages/admin/products/edit";
 import pageOrder from "./pages/order";
+import pageAdminOrder from "./pages/admin/orders";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -121,6 +122,9 @@ router.on({
     "admin/products/:id/edit": ({ data }) => {
         const { id } = data;
         printlayout(editProduct, HeaderDashBoard, id);
+    },
+    "admin/orders": () => {
+        printlayout(pageAdminOrder, HeaderDashBoard);
     },
 });
 router.resolve();

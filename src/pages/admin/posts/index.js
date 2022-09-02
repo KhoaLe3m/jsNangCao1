@@ -8,9 +8,6 @@ const AdminPost = {
         const { data } = await getAll();
         return /* html */`
             <div class="max-w-5xl mx-auto">
-                <div class="banner">
-                    <img src="https://picsum.photos/2048/300">
-                </div>
                 <div class="news">
                     <h1 class="text-2xl text-center text-blue-800">Quản lý tin tức</h1>
                     <table class="border table-auto text-lg w-full text-left">

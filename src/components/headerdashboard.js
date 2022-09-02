@@ -13,7 +13,7 @@ const HeaderDashBoard = {
                         <div><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/admin/news">News</a></div>
                         <div><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/admin/products">Product</a></div>
                         <div><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/admin/news/add">Category</a></div>
-                        <div><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/admin/news/add">Orders</a></div>
+                        <div><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/admin/orders">Orders</a></div>
                         <div class=""><a class=" py-4 px-3 text-black hover:opacity-80 inline-block" href="/#/">Về Trang Web</a></div>
                     </div>
                     <div class="flex items-center relative">

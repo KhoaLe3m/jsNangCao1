@@ -52,64 +52,66 @@ const pageOrder = {
         let sum = 0;
         let cart = [];
         const formAddRecipient = $("#formAddRecipient");
-        cart = JSON.parse(localStorage.getItem("cart"));
-        // eslint-disable-next-line no-restricted-syntax
-        for (const item of cart) {
-            sum += item.price * item.quantity;
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+            for (const item of cart) {
+                sum += item.price * item.quantity;
+            }
+            formAddRecipient.validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    address: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    name: {
+                        required: "Trường này không được để trống",
+                    },
+                    phone: {
+                        required: "Trường này không được để trống",
+                    },
+                    address: {
+                        required: "Trường này không được để trống",
+                    },
+                },
+                submitHandler() {
+                    const idRecipient = JSON.parse(localStorage.getItem("user")).id;
+                    const idOrder = Math.random() * 1000;
+                    try {
+                        add({
+                            name: document.querySelector("#name").value,
+                            phone: Number(document.querySelector("#phone").value),
+                            address: document.querySelector("#address").value,
+                            id: idRecipient,
+                        });
+                        addOrderId({
+                            id: idOrder,
+                            idRecipient,
+                            creatAt: new Date().toLocaleString("en-US"),
+                            status: "Chưa xác nhận",
+                        });
+                        addOrder({
+                            item: cart,
+                            idOrder,
+                            sum,
+                        });
+                        toastr.success("xác nhận đặt hàng thành công!");
+                        setTimeout(() => {
+                            localStorage.removeItem("cart");
+                            document.location.href = "/cart";
+                        }, 4000);
+                    } catch (error) {
+                        toastr.error(error.response.data);
+                    }
+                },
+            });
         }
-        formAddRecipient.validate({
-            rules: {
-                name: {
-                    required: true,
-                },
-                phone: {
-                    required: true,
-                },
-                address: {
-                    required: true,
-                },
-            },
-            messages: {
-                name: {
-                    required: "Trường này không được để trống",
-                },
-                phone: {
-                    required: "Trường này không được để trống",
-                },
-                address: {
-                    required: "Trường này không được để trống",
-                },
-            },
-            submitHandler() {
-                const idRecipient = Math.random() * 1000;
-                const idOrder = Math.random() * 1000;
-                try {
-                    add({
-                        name: document.querySelector("#name").value,
-                        phone: Number(document.querySelector("#phone").value),
-                        address: document.querySelector("#address").value,
-                        id: idRecipient,
-                    });
-                    addOrderId({
-                        id: idOrder,
-                        idRecipient,
-                        creatAt: new Date(),
-                        status: 0,
-                    });
-                    addOrder({
-                        item: cart,
-                        idOrder,
-                    });
-                    toastr.success("xác nhận đặt hàng thành công!");
-                    setTimeout(() => {
-                        localStorage.removeItem("cart");
-                        document.location.href = "/cart";
-                    }, 4000);
-                } catch (error) {
-                    toastr.error(error.response.data);
-                }
-            },
-        });
     },
 };
 export default pageOrder;
