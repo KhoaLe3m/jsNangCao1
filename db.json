@@ -299,6 +299,12 @@
       "phone": 819906199,
       "address": "156/6 Tô Hiến Thành P15 Q10",
       "id": 2
+    },
+    {
+      "name": "Nguyễn Văn A",
+      "phone": 121231233,
+      "address": "6 lê lơi 123zx",
+      "id": 3
     }
   ],
   "orders": [
@@ -379,6 +385,102 @@
       "idOrder": 740.7926886590815,
       "sum": 61728390,
       "id": 4
+    },
+    {
+      "item": [
+        {
+          "id": "1",
+          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
+          "price": 12345678,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
+          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
+          "quantity": 5
+        },
+        {
+          "createdAt": "2022-08-14T03:17:29.172Z",
+          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
+          "price": 1190000,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
+          "desc": "Detail Product B",
+          "id": "2",
+          "quantity": 6
+        },
+        {
+          "id": "8U1sZdl",
+          "name": "Giày Lười Da Nam NL85",
+          "price": 490000,
+          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
+          "desc": "                        123123\n                    ",
+          "quantity": 7
+        }
+      ],
+      "idOrder": 17760.55464078199,
+      "sum": 72298390,
+      "id": 5
+    },
+    {
+      "item": [
+        {
+          "id": "1",
+          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
+          "price": 12345678,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
+          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
+          "quantity": 5
+        },
+        {
+          "createdAt": "2022-08-14T03:17:29.172Z",
+          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
+          "price": 1190000,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
+          "desc": "Detail Product B",
+          "id": "2",
+          "quantity": 6
+        },
+        {
+          "id": "8U1sZdl",
+          "name": "Giày Lười Da Nam NL85",
+          "price": 490000,
+          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
+          "desc": "                        123123\n                    ",
+          "quantity": 7
+        }
+      ],
+      "idOrder": 71007.78072347847,
+      "sum": 72298390,
+      "id": 6
+    },
+    {
+      "item": [
+        {
+          "id": "1",
+          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
+          "price": 12345678,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
+          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
+          "quantity": 1
+        },
+        {
+          "createdAt": "2022-08-14T03:17:29.172Z",
+          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
+          "price": 1190000,
+          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
+          "desc": "Detail Product B",
+          "id": "2",
+          "quantity": 2
+        },
+        {
+          "id": "8U1sZdl",
+          "name": "Giày Lười Da Nam NL85",
+          "price": 490000,
+          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
+          "desc": "                        123123\n                    ",
+          "quantity": 1
+        }
+      ],
+      "idOrder": 45060.00585907044,
+      "sum": 15215678,
+      "id": 7
     }
   ],
   "ordersid": [
@@ -404,6 +506,24 @@
       "idRecipient": 2,
       "creatAt": "9/2/2022, 4:39:49 PM",
       "status": "Đã duyệt"
+    },
+    {
+      "id": 868.5901677514807,
+      "idRecipient": 3,
+      "creatAt": "9/2/2022, 8:39:50 PM",
+      "status": "Đã hủy"
+    },
+    {
+      "id": 869.5901677514807,
+      "idRecipient": 2,
+      "creatAt": "9/2/2022, 8:53:50 PM",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": 870.5901677514807,
+      "idRecipient": 2,
+      "creatAt": "9/2/2022, 8:56:09 PM",
+      "status": "Đã hủy"
     }
   ]
 }

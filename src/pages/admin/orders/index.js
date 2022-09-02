@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import { edit, get, getAll } from "../../../api/ordersid";
 import reRender from "../../../utils/reRender";
+import "toastr/build/toastr.min.css";
 
 const pageAdminOrder = {
     async render() {
@@ -45,13 +47,34 @@ const pageAdminOrder = {
                 const { id } = btn.dataset;
                 const { data } = await get(id);
                 if (btn.classList.contains("btn-duyet")) {
-                    await edit({
-                        id,
-                        idRecipient: data.idRecipient,
-                        creatAt: data.creatAt,
-                        status: "Đã duyệt",
-                    });
-                    reRender(pageAdminOrder, "#app");
+                    if (data.status === "Chờ xác nhận") {
+                        await edit({
+                            id,
+                            idRecipient: data.idRecipient,
+                            creatAt: data.creatAt,
+                            status: "Đã duyệt",
+                        });
+                        reRender(pageAdminOrder, "#app");
+                    } else if (data.status === "Đã duyệt") {
+                        toastr.warning("Đơn này đã duyệt");
+                    } else {
+                        toastr.error("Không thể duyệt đơn đã hủy");
+                    }
+                }
+                if (btn.classList.contains("btn-huy")) {
+                    if (data.status === "Chờ xác nhận") {
+                        await edit({
+                            id,
+                            idRecipient: data.idRecipient,
+                            creatAt: data.creatAt,
+                            status: "Đã hủy",
+                        });
+                        reRender(pageAdminOrder, "#app");
+                    } else if (data.status === "Đã hủy") {
+                        toastr.warning("Đơn này đã hủy");
+                    } else {
+                        toastr.error("Không thể hủy đơn đã duyệt");
+                    }
                 }
             });
         });

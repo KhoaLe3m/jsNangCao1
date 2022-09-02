@@ -23,7 +23,8 @@ const pageOrder = {
                             <br>
                             <label class="ml-3">Họ và tên:</label>
                             <input type="text" id="name" name="name" class="border-2 rounded-md">
-                            <label class="ml-3">Số điện thoại:</label>
+                            <br><br>
+                            <label class="ml-3 ">Số điện thoại:</label>
                             <input type="number" id="phone" name="phone" class="border-2 rounded-md">
                             <br><br>
                             <label class="ml-3">Địa chỉ:</label>
@@ -82,33 +83,35 @@ const pageOrder = {
                 },
                 submitHandler() {
                     const idRecipient = JSON.parse(localStorage.getItem("user")).id;
-                    const idOrder = Math.random() * 1000;
-                    try {
-                        add({
-                            name: document.querySelector("#name").value,
-                            phone: Number(document.querySelector("#phone").value),
-                            address: document.querySelector("#address").value,
-                            id: idRecipient,
-                        });
-                        addOrderId({
-                            id: idOrder,
-                            idRecipient,
-                            creatAt: new Date().toLocaleString("en-US"),
-                            status: "Chưa xác nhận",
-                        });
-                        addOrder({
-                            item: cart,
-                            idOrder,
-                            sum,
-                        });
-                        toastr.success("xác nhận đặt hàng thành công!");
-                        setTimeout(() => {
-                            localStorage.removeItem("cart");
-                            document.location.href = "/cart";
-                        }, 4000);
-                    } catch (error) {
-                        toastr.error(error.response.data);
+                    const idOrder = Math.random() * 100000;
+                    async function addOrders() {
+                        try {
+                            add({
+                                name: document.querySelector("#name").value,
+                                phone: Number(document.querySelector("#phone").value),
+                                address: document.querySelector("#address").value,
+                                id: idRecipient,
+                            });
+                            addOrderId({
+                                idRecipient,
+                                creatAt: new Date().toLocaleString("en-US"),
+                                status: "Chưa xác nhận",
+                            });
+                            addOrder({
+                                item: cart,
+                                idOrder,
+                                sum,
+                            });
+                            toastr.success("xác nhận đặt hàng thành công!");
+                            setTimeout(() => {
+                                localStorage.removeItem("cart");
+                                document.location.href = "/cart";
+                            }, 4000);
+                        } catch (error) {
+                            toastr.error(error.response.data);
+                        }
                     }
+                    addOrders();
                 },
             });
         }
