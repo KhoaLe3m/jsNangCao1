@@ -20,6 +20,7 @@ import editProduct from "./pages/admin/products/edit";
 import pageOrder from "./pages/order";
 import pageAdminOrder from "./pages/admin/orders";
 import pageDetailOrder from "./pages/admin/orders/detailorder";
+import pageListOrdered from "./pages/listordered";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -103,6 +104,9 @@ router.on({
     },
     "/order": () => {
         printlayout(pageOrder, Header);
+    },
+    "/listordered": () => {
+        printlayout(pageListOrdered, Header);
     },
     "admin/news": () => {
         printlayout(AdminPost, HeaderDashBoard);

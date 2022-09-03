@@ -19,6 +19,7 @@ const Nav = {
                 </li>
                 </ul>
                 ${localStorage.getItem("user") ? `<ul class=" flex items-center text-center  ">
+                <li ><a  class="  py-3 px-4 text-white hover:text-blue-800" href="/listordered">Xem danh sach dat hang</a></li>
                 <li class="flex  " ><p class="mt-3">Hello</p><span class="block  py-3 px-4 text-white hover:text-blue-800" id="username"></span></li>
                 <li ><a href="/cart" class="  py-3 px-4 text-white hover:text-blue-800" id="cart"><i class="fas fa-cart-arrow-down"></i></a></li>
                 <li ><a  class="  py-3 px-4 text-white hover:text-blue-800" id="logout">Log out</a></li>
