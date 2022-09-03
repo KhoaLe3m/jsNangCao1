@@ -1,5 +1,5 @@
 import toastr from "toastr";
-import { edit, get, getAll } from "../../../api/ordersid";
+import { edit, getIdOrder, getAll } from "../../../api/ordersid";
 import reRender from "../../../utils/reRender";
 import "toastr/build/toastr.min.css";
 
@@ -45,9 +45,9 @@ const pageAdminOrder = {
         btns.forEach((btn) => {
             btn.addEventListener("click", async () => {
                 const { id } = btn.dataset;
-                const { data } = await get(id);
+                const { data } = await getIdOrder(id);
                 if (btn.classList.contains("btn-duyet")) {
-                    if (data.status === "Chờ xác nhận") {
+                    if (data.status === "Chưa xác nhận") {
                         await edit({
                             id,
                             idRecipient: data.idRecipient,
@@ -62,7 +62,7 @@ const pageAdminOrder = {
                     }
                 }
                 if (btn.classList.contains("btn-huy")) {
-                    if (data.status === "Chờ xác nhận") {
+                    if (data.status === "Chưa xác nhận") {
                         await edit({
                             id,
                             idRecipient: data.idRecipient,

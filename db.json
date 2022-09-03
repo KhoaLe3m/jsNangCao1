@@ -284,27 +284,9 @@
   "recipients": [
     {
       "name": "TAN KHOA LE",
-      "phone": 819906199,
-      "address": "156/6 Tô Hiến Thành P15 Q10",
-      "id": 854.6319429470146
-    },
-    {
-      "name": "TAN KHOA LE",
-      "phone": 819906199,
-      "address": "156/6 Tô Hiến Thành P15 Q10",
-      "id": 855.6319429470146
-    },
-    {
-      "name": "TAN KHOA LE",
-      "phone": 819906199,
+      "phone": "0819906199",
       "address": "156/6 Tô Hiến Thành P15 Q10",
       "id": 2
-    },
-    {
-      "name": "Nguyễn Văn A",
-      "phone": 121231233,
-      "address": "6 lê lơi 123zx",
-      "id": 3
     }
   ],
   "orders": [
@@ -316,7 +298,7 @@
           "price": 12345678,
           "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
           "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 2
+          "quantity": 5
         },
         {
           "createdAt": "2022-08-14T03:17:29.172Z",
@@ -325,205 +307,28 @@
           "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
           "desc": "Detail Product B",
           "id": "2",
-          "quantity": 3
+          "quantity": 6
+        },
+        {
+          "id": "8U1sZdl",
+          "name": "Giày Lười Da Nam NL85",
+          "price": 490000,
+          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
+          "desc": "                        123123\n                    ",
+          "quantity": 7
         }
       ],
-      "idOrder": 867,
-      "sum": 28261356,
+      "idOrder": 212,
+      "sum": 72298390,
       "id": 1
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 2
-        },
-        {
-          "createdAt": "2022-08-14T03:17:29.172Z",
-          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
-          "price": 1190000,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
-          "desc": "Detail Product B",
-          "id": "2",
-          "quantity": 3
-        }
-      ],
-      "idOrder": 43,
-      "sum": 28261356,
-      "id": 2
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 1
-        }
-      ],
-      "idOrder": 407,
-      "sum": 12345678,
-      "id": 3
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 5
-        }
-      ],
-      "idOrder": 740,
-      "sum": 61728390,
-      "id": 4
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 5
-        },
-        {
-          "createdAt": "2022-08-14T03:17:29.172Z",
-          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
-          "price": 1190000,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
-          "desc": "Detail Product B",
-          "id": "2",
-          "quantity": 6
-        },
-        {
-          "id": "8U1sZdl",
-          "name": "Giày Lười Da Nam NL85",
-          "price": 490000,
-          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
-          "desc": "                        123123\n                    ",
-          "quantity": 7
-        }
-      ],
-      "idOrder": 17760,
-      "sum": 72298390,
-      "id": 5
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 5
-        },
-        {
-          "createdAt": "2022-08-14T03:17:29.172Z",
-          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
-          "price": 1190000,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
-          "desc": "Detail Product B",
-          "id": "2",
-          "quantity": 6
-        },
-        {
-          "id": "8U1sZdl",
-          "name": "Giày Lười Da Nam NL85",
-          "price": 490000,
-          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
-          "desc": "                        123123\n                    ",
-          "quantity": 7
-        }
-      ],
-      "idOrder": 71007,
-      "sum": 72298390,
-      "id": 6
-    },
-    {
-      "item": [
-        {
-          "id": "1",
-          "name": "Nike Air Jordan 1 Retro High Defiant White Black Gym Red",
-          "price": 12345678,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2020/10/Air-Jordan-1-Retro-High-Defiant-White-Black-Gym-Red-800x600.jpeg",
-          "desc": "                                                                                                Detail Product A\n                    \n                    \n                    \n                    ",
-          "quantity": 1
-        },
-        {
-          "createdAt": "2022-08-14T03:17:29.172Z",
-          "name": "Giày Nike Jordan 1 Retro High Og Chicago",
-          "price": 1190000,
-          "img": "https://shopgiayreplica.com/wp-content/uploads/2018/07/nike-jordan-1-og-chicago-replica-800x600.jpg",
-          "desc": "Detail Product B",
-          "id": "2",
-          "quantity": 2
-        },
-        {
-          "id": "8U1sZdl",
-          "name": "Giày Lười Da Nam NL85",
-          "price": 490000,
-          "img": "http://res.cloudinary.com/dzl3gqizk/image/upload/v1661858878/yxsvgevx57rpbebbftmk.jpg",
-          "desc": "                        123123\n                    ",
-          "quantity": 1
-        }
-      ],
-      "idOrder": 45060,
-      "sum": 15215678,
-      "id": 7
     }
   ],
   "ordersid": [
     {
-      "id": 867.5901677514807,
-      "idRecipient": 854,
-      "creatAt": "2022-09-02T09:24:52.555Z",
-      "status": "Đã duyệt"
-    },
-    {
-      "id": 43,
-      "creatAt": "9/2/2022, 4:31:09 PM",
-      "status": "Đã duyệt"
-    },
-    {
-      "id": 407,
+      "id": 212,
       "idRecipient": 2,
-      "creatAt": "9/2/2022, 4:32:06 PM",
+      "creatAt": "9/3/2022, 3:28:56 PM",
       "status": "Đã duyệt"
-    },
-    {
-      "id": 740,
-      "idRecipient": 2,
-      "creatAt": "9/2/2022, 4:39:49 PM",
-      "status": "Đã duyệt"
-    },
-    {
-      "id": 868,
-      "idRecipient": 3,
-      "creatAt": "9/2/2022, 8:39:50 PM",
-      "status": "Đã hủy"
-    },
-    {
-      "id": 869,
-      "idRecipient": 2,
-      "creatAt": "9/2/2022, 8:53:50 PM",
-      "status": "Đã duyệt"
-    },
-    {
-      "id": 870,
-      "idRecipient": 2,
-      "creatAt": "9/2/2022, 8:56:09 PM",
-      "status": "Đã hủy"
     }
   ]
 }

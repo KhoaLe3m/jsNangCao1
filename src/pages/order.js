@@ -88,7 +88,7 @@ const pageOrder = {
                         try {
                             add({
                                 name: document.querySelector("#name").value,
-                                phone: Number(document.querySelector("#phone").value),
+                                phone: document.querySelector("#phone").value,
                                 address: document.querySelector("#address").value,
                                 id: idRecipient,
                             });

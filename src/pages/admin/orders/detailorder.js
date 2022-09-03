@@ -1,14 +1,26 @@
 import { getOrderByIdOrder } from "../../../api/orders";
+import { getIdOrder } from "../../../api/ordersid";
+import { get } from "../../../api/recipients";
 
 const pageDetailOrder = {
     async render(id) {
-        const { data } = await getOrderByIdOrder(id);
-        const { item } = data[0];
+        // call api lấy đơn hàng bằng id của chi tiết đơn hàng
+        const order = (await getOrderByIdOrder(id)).data;
+        const { item } = order[0];
+        // call api lấy id người nhận qua bằng id của chi tiết đơn hàng
+        const { idRecipient } = (await getIdOrder(id)).data;
+        const recipient = (await get(idRecipient)).data;
         return /* html */`
-        <h1 class="text-2xl text-blue-500 text-center">Chi tiết đơn hàng</h1>
             <div class="grid grid-cols-3 gap-4">
-                <div>1</div>
+                <div>
+                    <h1 class="text-2xl text-blue-500 text-center">Thông tin người nhận</h1>
+                    <h1 class="text-xl">Tên người nhận:<span class="text-2xl" >${recipient.name}</span></h1>
+                    <h1 class="text-xl">Số điện thoại:<span class="text-2xl" >${recipient.phone}</span></h1>
+                    <h1 class="text-xl">Địa chỉ:<span class="text-2xl">${recipient.address}</span></h1>
+                </div>
                 <div class="col-span-2">
+                    <h1 class="text-2xl text-blue-500 text-center">Chi tiết đơn hàng</h1>
+
                     <table class="table-auto">
                         <thead>
                             <tr>
@@ -33,7 +45,7 @@ const pageDetailOrder = {
                                 
                             `).join("")}
                             <tr cellpadding="0px" cellspacing="0px">
-                                    <td colspan='6' style='text-align:right'><h1 class="text-2xl">Tổng tiền = ${data[0].sum.toLocaleString("vi", { style: "currency", currency: "VND" })}</h1></td>
+                                    <td colspan='6' style='text-align:right'><h1 class="text-2xl">Tổng tiền = ${order[0].sum.toLocaleString("vi", { style: "currency", currency: "VND" })}</h1></td>
                             </tr>
                         </tbody>
                     </table>

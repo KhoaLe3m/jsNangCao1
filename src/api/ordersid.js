@@ -4,7 +4,7 @@ export const getAll = () => {
     const url = `/ordersid`;
     return instance.get(url);
 };
-export const get = (id) => {
+export const getIdOrder = (id) => {
     const url = `/ordersid/${id}`;
     return instance.get(url);
 };
