@@ -83,7 +83,7 @@ const pageOrder = {
                 },
                 submitHandler() {
                     const idRecipient = JSON.parse(localStorage.getItem("user")).id;
-                    const idOrder = Math.random() * 100000;
+                    const idOrder = Math.floor(Math.random() * 1000);
                     async function addOrders() {
                         try {
                             add({
@@ -94,6 +94,7 @@ const pageOrder = {
                             });
                             addOrderId({
                                 idRecipient,
+                                id: idOrder,
                                 creatAt: new Date().toLocaleString("en-US"),
                                 status: "Chưa xác nhận",
                             });

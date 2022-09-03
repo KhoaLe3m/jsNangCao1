@@ -20,3 +20,7 @@ export const edit = (order) => {
     const url = `/orders/${order.id}`;
     return instance.put(url, order);
 };
+export const getOrderByIdOrder = (id) => {
+    const url = `/orders?idOrder=${id}`;
+    return instance.get(url);
+};
