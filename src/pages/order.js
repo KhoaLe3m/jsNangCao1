@@ -9,13 +9,14 @@ const pageOrder = {
     render() {
         let sum = 0;
         let cart = [];
-        if (localStorage.getItem("cart")) {
-            cart = JSON.parse(localStorage.getItem("cart"));
-            // eslint-disable-next-line no-restricted-syntax
-            for (const item of cart) {
-                sum += item.price * item.quantity;
-            }
-            return /* html */`
+        if (localStorage.getItem("user")) {
+            if (localStorage.getItem("cart")) {
+                cart = JSON.parse(localStorage.getItem("cart"));
+                // eslint-disable-next-line no-restricted-syntax
+                for (const item of cart) {
+                    sum += item.price * item.quantity;
+                }
+                return /* html */`
                 <div class="grid grid-cols-4 gap-4">
                     <div class="col-span-2">
                         <h1 class="text-center text-3xl text-blue-500">Thông tin người nhận</h1>
@@ -47,6 +48,10 @@ const pageOrder = {
                     </div>
                 </div>
             `;
+            }
+        } else {
+            alert("Bạn cần phải đăng nhập!");
+            window.location.href = "/signin";
         }
     },
     afterRender() {

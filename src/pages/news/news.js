@@ -1,5 +1,5 @@
-import HeaderDashBoard from "../components/headerdashboard";
-import data from "../data";
+import HeaderDashBoard from "../../components/headerdashboard";
+import data from "../../data";
 
 const News = {
     render() {

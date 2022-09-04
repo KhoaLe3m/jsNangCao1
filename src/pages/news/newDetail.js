@@ -1,4 +1,4 @@
-import { get } from "../api/posts";
+import { get } from "../../api/posts";
 
 const NewsDetail = {
     async render(id) {
