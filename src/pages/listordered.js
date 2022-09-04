@@ -28,7 +28,7 @@ const pageListOrdered = {
                                     <tr>
                                         <td class="border border-slate-300 pr-3 pl-3">${index + 1}</td>
                                         <td class="border border-slate-300 pr-3 pl-3">${order.creatAt}</td>
-                                        <td class="border border-slate-300 pr-3 pl-3"><button class="bg-gray-700 p-1 rounded text-white hover:opacity-80"><a href="/detailorder?idorder=${order.id}">Chi tiết</a><button></td>
+                                        <td class="border border-slate-300 pr-3 pl-3"><button class="bg-gray-700 p-1 rounded text-white hover:opacity-80"><a href="/detailorder/idorder/${order.id}">Chi tiết</a><button></td>
                                         <td class="border border-slate-300 pr-3 pl-3">${order.status}</td>
                                         <td class="border border-slate-300 pr-3 pl-3"><button data-id="${order.id}" class="btn btn-huy bg-red-700 p-1 rounded hover:opacity-80">Hủy<button></td>
                                     </tr>

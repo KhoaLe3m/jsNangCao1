@@ -21,6 +21,7 @@ import pageOrder from "./pages/order";
 import pageAdminOrder from "./pages/admin/orders";
 import pageDetailOrder from "./pages/admin/orders/detailorder";
 import pageListOrdered from "./pages/listordered";
+import DetailOrder from "./pages/pagedetailorder";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const printlayout = async (content, header, id) => {
@@ -107,6 +108,10 @@ router.on({
     },
     "/listordered": () => {
         printlayout(pageListOrdered, Header);
+    },
+    "/detailorder/idorder/:id": ({ data }) => {
+        const { id } = data;
+        printlayout(DetailOrder, Header, id);
     },
     "admin/news": () => {
         printlayout(AdminPost, HeaderDashBoard);
