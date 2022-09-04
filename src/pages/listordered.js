@@ -8,6 +8,9 @@ const pageListOrdered = {
         if (localStorage.getItem("user")) {
             const idUser = JSON.parse(localStorage.getItem("user")).id;
             const { data } = await getIdOrderByIdUser(idUser);
+            if (data.length === 0) {
+                return `<span>Chưa có đơn đặt hàng</span>`;
+            }
             return /* html */`
                 <div class="grid grid-cols-3 gap-4">
                     <div>1</div>
@@ -40,7 +43,7 @@ const pageListOrdered = {
                 </div>
             `;
         }
-        return ``;
+        window.location.href = "/#/";
     },
     afterRender() {
         if (localStorage.getItem("user")) {
